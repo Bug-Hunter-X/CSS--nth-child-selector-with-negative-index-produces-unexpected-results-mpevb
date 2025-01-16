@@ -1,0 +1,16 @@
+The solution involves avoiding negative indices within the `:nth-child` selector.  Instead of using a formula that could produce negative values, use a positive index or a different selector that achieves the same result.
+
+```css
+ul li:nth-child(-n+3) { /* Buggy code */
+  color: blue;
+}
+
+ul li:nth-child(n) { /* Solution: style all list items*/
+  color: blue;
+}
+ul li:nth-child(n+4) { /* Solution: remove style from 4th onwards*/
+  color: black;
+}
+```
+
+This revised code will consistently style the first three list items (or all if intended) across different browsers.
