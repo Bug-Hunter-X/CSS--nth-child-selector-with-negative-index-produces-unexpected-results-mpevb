@@ -1,0 +1,9 @@
+The following CSS code snippet demonstrates an issue with unexpected behavior when using the `:nth-child` pseudo-class selector with a formula that results in a negative index:
+
+```css
+ul li:nth-child(-n+3) {
+  color: blue;
+}
+```
+
+This code intends to style the first three list items. However, some browsers may interpret the negative value in the formula differently, leading to unexpected results or no styling at all.
